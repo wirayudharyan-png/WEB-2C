@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 9 JS</title>
+</head>
+<body>
+    <h1>Tugs 9 JS OOP</h1>
+    
+    <script type="text/javascript">
+        //membuat blueprint objek / CLASS kendaraan
+        function kendaraan(jenis, roda, warna) {
+            //cinstructor
+            this.jenis = jenis;
+            this.roda = roda;
+            this.warna = warna;
+
+            //mathod atau function
+            this.Maju = function() {
+                document.write("kendaraan jenis "+ 
+                    this.jenis + " Bergerak Maju <br> ");
+            }
+
+            this.Mundur = function() {
+                document.write("kendaraan jenis "+this.
+                    jenis + " Bergerak Mundur <br> ")
+            }
+
+            this.Belok = function(arah) {
+                document.write("kendaraan jenis "+this.
+                    jenis + " Sedang Bergerak Ke " + arah +
+                    "<br>");
+            }
+
+            this.Berhenti = function() {
+                document.write("kendaraan jenis "+ this.
+                jenis + " Sedang berhenti <br> ");
+            }
+        }
+
+        //Membuat instance
+        let sedan = new kendaraan("Sedan", 4, "hitam");
+        let sepedamotor = new kendaraan("Motor", 2, "Biru");
+
+        //trigger dan tuliskan ke browser
+        document.write("<h2>Kendaran Jenis "+sepedamotor.jenis+"</h2>");
+        document.write("<h3>Kendaran Warna "+sepedamotor.warna+"</h3>");
+        document.write("<h3>Kendaran Beroda "+sepedamotor.roda+"</h3>");
+ 
+        //memanggil fungsi
+        sepedamotor.Belok("Kanan");
+        sedan.Maju();
+        sepedamotor.Mundur();
+        sedan.Berhenti();
+
+    </script>
+</body>
+</html>
